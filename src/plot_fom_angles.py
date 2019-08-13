@@ -7,8 +7,8 @@ degrees_to_radians = np.pi / 180.
 angle_min = 0.0 * degrees_to_radians
 angle_max = 30.0 * degrees_to_radians
 
-num_angles = 12
-num_wavelengths = 3
+num_angles = 18
+num_wavelengths = 8
 num_pol = 2
 num_optimization_goals = num_wavelengths * num_angles * num_pol
 
@@ -42,13 +42,13 @@ choose_ppol = 1
 
 print( num_optimization_goals )
 
-wl_colors = [ 'b', 'g', 'r' ]
+wl_colors = [ 'b',' g', 'r', 'c', 'm', 'y', 'k', '#ff8830' ]
 
 plot_fom_spol = [ np.zeros( ( num_iterations, 1 ) ) for i in range( 0, num_wavelengths ) ]
 plot_fom_ppol = [ np.zeros( ( num_iterations, 1 ) ) for i in range( 0, num_wavelengths ) ]
 
 for ang_idx in range( 0, num_angles ):
-	plt.subplot( 3, 4, 1 + ang_idx )
+	plt.subplot( 6, 3, 1 + ang_idx )
 	for wl_idx in range( 0, num_wavelengths ):
 		for iter_idx in range( 0, num_iterations ):
 			plot_fom_spol[ wl_idx ][ iter_idx ] = fom[ iter_idx, wl_idx, ang_idx, choose_spol ]
@@ -60,5 +60,5 @@ for ang_idx in range( 0, num_angles ):
 	plt.ylim( [ -1, 1 ] )
 	plt.gca().get_xaxis().set_ticks( [] )
 
-plt.show()
 
+plt.show()
