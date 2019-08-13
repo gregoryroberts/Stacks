@@ -265,7 +265,6 @@ for iter_idx in range( 0, num_iterations ):
 				fom[ iter_idx, wl_idx, ang_idx, 0 ] = 1 - fom_s_normalized
 				fom[ iter_idx, wl_idx, ang_idx, 1 ] = 1 - fom_p_normalized
 
-
 	grad_weightings = ( 2. / num_optimization_goals ) - ( np.power( fom_iter, 2 ) / np.sum( np.power( fom_iter, 2 ) ) )
 
 	if np.min( grad_weightings ) < 0:
