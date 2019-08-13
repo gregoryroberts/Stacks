@@ -27,6 +27,7 @@ mid_index = 0.5 * (min_index + max_index)
 
 if len( sys.argv ) < 2:
 	print( "Please specify a device name prefix for this optimization" )
+	print( "Usage: " + sys.argv[ 0 ] + " [device name prefix]" )
 	sys.exit()
 
 device_filepath = "devices/"
